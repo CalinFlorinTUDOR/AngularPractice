@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,25 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
   
-  nume='Calin'
+  myform!: any;
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.myform = new FormGroup ({
+      username: new FormControl(''),
+      email: new FormControl(''),
+      fname: new FormControl(''),
+      lname: new FormControl(''),
+      password: new FormControl(''),
+      passwors2nd: new FormControl(''),
+      age: new FormControl('')
+    });
   }
 
+  onSubmit() {
 
-  storeData(){
-    let data = {
-      username: 'username.value',
-      email: 'email.value',
-      fname: 'fname.value',
-      lname: 'lname.value',
-      password: 'password.value',
-      password2nd: 'password2nd.value',
-      age: 'age.value'
-      
-    };
-        localStorage.setItem('username.value', JSON.stringify(data));
-
-  }
+  localStorage.setItem('userData', JSON.stringify(this.myform.value))
+}
 }

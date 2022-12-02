@@ -2,44 +2,44 @@
   <div class="header">
     <h2>Welcome to Tesseract register page</h2>
   </div>
-  <form name="register" class="register" id="register">
+  <form [formGroup]="myform" (ngSubmit)="onSubmit()" class="register" >
     <div class="input-container">
       <label for="username">Username</label>
-      <input type="text" name="username" placeholder="enter your username " id="username"/>
+      <input type="text" formControlName="username" placeholder="enter your username "/>
     </div>
 
     <div class="input-container">
       <label for="email">Email</label>
-      <input type="email" placeholder="enter email address" id="email" />
+      <input type="email" formControlName="email" placeholder="enter email address" id="email" />
     </div>
     
     <div class="input-container">
       <label for="fname">First Name</label>
-      <input type="text" placeholder="john" id="fname" />
+      <input type="text" formControlName="fname" placeholder="john" id="fname" />
     </div>
 
     <div class="input-container">
-      <label for="fname">Last Name</label>
-      <input type="text" placeholder="doe" id="lname" />
+      <label for="lname">Last Name</label>
+      <input type="text" formControlName="lname" placeholder="doe"/>
     </div>
 
     <div class="input-container">
       <label for="password">Password</label>
-      <input type="password" placeholder="enter your password" id="password"/>
+      <input type="password" formControlName="password" placeholder="enter your password"/>
     </div>
 
     <div class="input-container">
       <label for="password">Confirm Password</label>
-      <input type="password" placeholder="confirm password" id="password2nd"/>
+      <input type="password" formControlName="password2nd" placeholder="confirm password"/>
     </div>
 
     <div class="input-container">
       <label for="age">Age</label>
-      <input type="age" placeholder="enter age" id="age" />
+      <input type="age" formControlName="age" placeholder="enter age"/>
     </div>
 
     <div class="input-container">
-      <button (click)="storeData()">Registration</button>
+      <button>Registration</button>
     </div>
     
   </form>
