@@ -63,6 +63,12 @@
   width: 100%;
 }
 
+.text-danger {
+
+  color: red;
+  
+}
+
 .register button {
 
   background-color: rgba(14, 28, 151, 0.6);
