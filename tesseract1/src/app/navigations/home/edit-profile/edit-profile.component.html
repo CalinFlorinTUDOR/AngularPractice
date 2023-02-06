@@ -1,6 +1,6 @@
 <div class="container">
   <div class="header">
-    <h2>Welcome to Tesseract register page</h2>
+    <h2>Edit Profile</h2>
   </div>
   <form [formGroup]="setForm" (ngSubmit)="onSubmit()" class="register" >
     <div class="input-container">
@@ -69,8 +69,6 @@
       <div class="form-text text-danger" *ngIf="password2nd.errors?.['required'] && (password2nd.touched || password2nd.dirty)">
         confirm password is invalid
       </div>
-      <div class="form-text text-danger" *ngIf="!matchPassword() && (password.touched !== password2nd.touched)"  >Passwords do not match</div>
-
     </div>
 
     <div class="input-container">
@@ -88,9 +86,9 @@
     </div>
 
     <div class="input-container">
-      <button  (click)="onSubmit()" routerLink="/login">Registration</button>
+      <button  (click)="onSubmit()" routerLink="/login">Update Profile</button>
     </div>
     
   </form>
 </div>
-
+<router-outlet></router-outlet>

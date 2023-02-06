@@ -2,7 +2,7 @@
   <div class="header">
       <h2>Welcome to Tesseract log in page</h2>
   </div>
-  <form [formGroup]="setForm" (ngSubmit)="onSubmit()" class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
 
     <div class="form-control">
       <label for="username">Username</label>
@@ -27,7 +27,7 @@
   </div>
 
   <div class="form-control">
-    <button class="btn" id="button" type="submit">Log In</button>
+    <button class="btn" id="button" type="submit" routerLink="/home">Log In</button>
   </div>
   </form>
 </div>

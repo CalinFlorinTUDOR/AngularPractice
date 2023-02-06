@@ -8,32 +8,28 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  setForm!: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-
-    this.setForm = new FormGroup ({
+  loginForm = new FormGroup ({
 
       username: new FormControl('', [Validators.required, Validators.minLength(2)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
 
     });
-  }
+  constructor() { }
+
+  ngOnInit() {}
 
   onSubmit() {
 
-    this.addMultipleUsers(this.setForm.value);
+    this.loginData(this.loginForm.value);
   
   }
-  
-    addMultipleUsers(user: any) {
 
-      if (this.setForm.valid) {
+    loginData(user: any) {
+
+      if (this.loginForm.valid) {
       let users = [];
       if (localStorage.getItem('Users')) {
-        users = JSON.parse(localStorage.getItem('Users' ) || '{}');
+        users = JSON.parse(localStorage.getItem('Users' ) || '[]');
         users = [user, ...users];
 
         localStorage.setItem('Users', JSON.stringify(users));
@@ -49,11 +45,11 @@ export class LoginComponent implements OnInit {
     }
 
   get username(): FormControl {
-      return this.setForm.get('username') as FormControl;
+      return this.loginForm.get('username') as FormControl;
     }  
 
     get password(): FormControl {
-      return this.setForm.get('password') as FormControl;
+      return this.loginForm.get('password') as FormControl;
     }  
 
 }

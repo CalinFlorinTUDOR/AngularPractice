@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent } from './register.component';
+import { ShiftsComponent } from './shifts.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('ShiftsComponent', () => {
+  let component: ShiftsComponent;
+  let fixture: ComponentFixture<ShiftsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      declarations: [ ShiftsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(ShiftsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,8 +21,3 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-
-
-

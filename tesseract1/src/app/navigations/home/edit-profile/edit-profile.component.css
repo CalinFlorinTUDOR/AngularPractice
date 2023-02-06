@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
-/* Customize the register form */
+/* Customize the edit profile form */
 
 .container {
   font-family: 'Ubuntu Condensed';
@@ -9,8 +9,8 @@
   color: #19c0d6;
   border-radius: 7px;
   box-shadow: 0 7px 49px #19c0d6;
-  margin-top: 100px;
-  margin-left: 100px;
+  margin-top: 70px;
+  margin-left: 900px;
   z-index: 1;
   width: 800px;
   top: 80px;
@@ -24,9 +24,6 @@
 }
 
 .header h2 {
-
-  font-family: 'Ubuntu Condensed';
-  font-size: 24px;
   display: flex;
   justify-content: center;
   
