@@ -7,7 +7,10 @@ import { MatIconModule } from'@angular/material/icon';
 import { MatButtonModule } from'@angular/material/button';
 import { MatListModule } from'@angular/material/list';
 import { MatSliderModule } from '@angular/material/slider';
-
+import { MatCardModule } from'@angular/material/card';
+import { MatFormFieldModule } from'@angular/material/form-field';
+import { MatInputModule } from'@angular/material/input';
+import { MatProgressSpinnerModule } from'@angular/material/progress-spinner';
 
 @NgModule
 (
@@ -21,10 +24,12 @@ import { MatSliderModule } from '@angular/material/slider';
       MatListModule,
       MatMenuModule,
       MatTabsModule,
-      MatSliderModule
+      MatSliderModule,
+      MatCardModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatProgressSpinnerModule
   
-      
-
     ],
   exports:
     [
@@ -35,9 +40,11 @@ import { MatSliderModule } from '@angular/material/slider';
       MatListModule,
       MatMenuModule,
       MatTabsModule,
-      MatSliderModule
-
-      
+      MatSliderModule,
+      MatCardModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatProgressSpinnerModule
 
     ]
   }
