@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TaskInterface } from 'src/app/task-interface';
 
 
 @Component({
@@ -8,19 +10,26 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
+
+
+  addForm!: FormGroup;
   
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep', 'Buy milk'];
+  todo: TaskInterface [] = [];
 
-  inProgress = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  inProgress: TaskInterface [] = [];
 
-  done = [];
+  done: TaskInterface [] = [];
 
-  doneList: any;
-  todoList: any;
-  inProgressList: any;
-  $event?: string;
+  updateID!: any;
 
-  drop(event: CdkDragDrop<string[]>) {
+  editEnable: boolean = false;
+
+  item: any;
+  i: any;
+  
+
+  
+  drop(event: CdkDragDrop<TaskInterface[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -29,12 +38,47 @@ export class TasksComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex,
+        
       );
     }
   }
-  constructor() { }
+  constructor(private fb : FormBuilder) { }
 
   ngOnInit(): void {
+    this.addForm = this.fb.group({
+      item : ['', Validators.required]
+    })
+  }
+  addTask() {
+    this.todo.push({
+      description:this.addForm.value.item,
+      done:false
+    })
+    this.addForm.reset();
   }
 
+  onEdit(item: TaskInterface, i : number) {
+    this.addForm.controls['item'].setValue(item.description);
+    this.updateID = i;
+    this.editEnable = true;
+  }
+
+  updateTask() {
+    this.todo[this.updateID].description = this.addForm.value.item;
+    this.todo[this.updateID].done = false;
+    this.addForm.reset();
+    this.updateID = undefined;
+    this.editEnable = false;
+  }
+
+  deleteTask(i: number) {
+    this.todo.splice(i,1)
+  }
+
+  deleteInProgressTask(i: number) {
+    this.inProgress.splice(i,1)
+  }
+  deleteDoneTask(i: number) {
+    this.done.splice(i,1)
+  }
 }

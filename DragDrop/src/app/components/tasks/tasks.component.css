@@ -1,5 +1,16 @@
 .input-fields {
+  margin-top: 10px;
   margin-left: 14px;
+}
+
+.form-btn {
+  margin-top: 10px;
+  margin-left: 14px;
+}
+
+.task-status {
+  display: flex;
+  gap: 20vw;
 }
 
 .task-container {
@@ -17,6 +28,15 @@
   border-radius: 4px;
   overflow: hidden;
   display: block;
+}
+
+.empty-label {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
+  opacity: 0.3;
 }
 
 .task-box {
