@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+/* Customize the edit profile form */
+
+.container {
+  font-family: 'Ubuntu Condensed';
+  position: absolute;
+  background-color: transparent;
+  color: #19c0d6;
+  border-radius: 7px;
+  box-shadow: 0 7px 49px #19c0d6;
+  margin-top: 70px;
+  margin-left: 900px;
+  z-index: 1;
+  width: 800px;
+  top: 80px;
+}
+
+.header {
+  background-color: transparent;
+  border-bottom: 1px solid #19c0d6;
+  padding: 25px 75px;
+  word-spacing: 3px;
+}
+
+.header h2 {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.register {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px 40px;
+}
+
+.input-container {
+
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.input-container label {
+
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+  
+}
+
+.input-container input {
+  
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;;
+  width: 100%;
+}
+
+.text-danger {
+
+  color: red;
+  
+}
+
+.register button {
+
+  background-color: rgba(14, 28, 151, 0.6);
+  border: 2px solid rgba(14, 28, 151, 0.6);
+  border-radius: 5px;
+  color: #f0f0f0;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 26px;
+
+}

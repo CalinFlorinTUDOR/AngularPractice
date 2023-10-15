@@ -1,0 +1,87 @@
+<div class="searchShifts">
+    <label style="font-weight:bold; color:#19c0d6;">Start date</label>
+    <input style="margin:10px; margin-left:2%; width:155px;" type="date" >
+    <br>
+    <label style="font-weight:bold; color:#19c0d6;">End date</label>
+    <input style="margin:10px; margin-left:2.5%; width:155px;" type="date" >
+    <br>
+    <label style="font-weight:bold; color:#19c0d6;">Shift place</label>
+    <select style="margin:15px; width:162px;">
+        <option></option>
+        <option>Level 1</option>
+        <option>Level 2</option>
+        <option>Level 3</option>
+    </select>
+    <br>
+    <button style="font-weight:bold; color:#19c0d6; margin-left:7%;">Search</button>
+
+    <p style="font-weight:bold; color:red; margin-left:5%;"></p>
+
+</div>
+
+<br>
+
+<form [formGroup]="shiftForm">
+<div formArrayName="shifts">
+    <div *ngFor="let shift of shifts.controls; let i = index" [formGroupName]="i"></div>
+    <div class="shiftsContainer">
+        <mat-form-field>
+            <input matInput placeholder="Date"  formControlName="date">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Start Time" formControlName="start_time">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="End Time" formControlName="end_time">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Hourly Wage"  formControlName="hourly_wage">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Shift Place" formControlName="shift_place">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Shift Name" formControlName="shift_name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Earnings" formControlName="earnings">
+        </mat-form-field>
+        <button mat-raised-button color="warm">Delete</button>
+
+
+    </div>
+
+</div>
+
+
+<button mat-raised-button color="primary" class="btnAdd"  (click)="addShift()">Add Shift</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

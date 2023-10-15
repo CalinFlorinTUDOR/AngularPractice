@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="header">
+    <h2>Edit Profile</h2>
+  </div>
+  <form [formGroup]="setForm" (ngSubmit)="onSubmit()" class="register" >
+    <div class="input-container">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username" placeholder="enter your username "/>
+      <div class="form-text text-danger" *ngIf="username.errors?.['required'] && (username.touched || username.dirty)">
+        username is required
+      </div>
+      <div class="form-text text-danger" *ngIf="username.errors?.['minlength'] && (username.touched || username.dirty)">
+        username is too short. Must contain letters,numbers and a special character
+      </div>
+      <div class="form-text text-danger" *ngIf="this.setForm['controls'].username.hasError('alreadyExist')">
+        username already exists!</div>
+    </div>
+
+    <div class="input-container">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" placeholder="enter email address" id="email" />
+      <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.touched || email.dirty)">
+        email is required
+      </div>
+      <div class="form-text text-danger" *ngIf="email.errors?.['email'] && (email.touched || email.dirty)">
+        email is invalid
+      </div>
+    </div>
+    
+    <div class="input-container">
+      <label for="fname">First Name</label>
+      <input type="text" formControlName="fname" placeholder="john" id="fname" />
+      <div class="form-text text-danger" *ngIf="fname.errors?.['required'] && (fname.touched || fname.dirty)">
+        first name is required
+      </div>
+      <div class="form-text text-danger" *ngIf="fname.errors?.['minlength'] && (fname.touched || fname.dirty)">
+        first name is too short. Must contain at least two characters
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="lname">Last Name</label>
+      <input type="text" formControlName="lname" placeholder="doe"/>
+      <div class="form-text text-danger" *ngIf="lname.errors?.['required'] && (lname.touched || lname.dirty)">
+        last name is required
+      </div>
+      <div class="form-text text-danger" *ngIf="lname.errors?.['minlength'] && (lname.touched || lname.dirty)">
+        last name is too short. Must contain at least two characters
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="password">Password</label>
+      <input type="password" [(ngModel)]="pass1" formControlName="password" placeholder="enter your password"/>
+      <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
+        password is required
+      </div>
+      <div class="form-text text-danger" *ngIf="password.errors?.['minlength'] && (password.touched || password.dirty)">
+        password is too short. At least 6 characters long
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="password">Confirm Password</label>
+      <input type="password" [(ngModel)]="pass2" formControlName="password2nd" placeholder="confirm password"/>
+      <div class="form-text text-danger" *ngIf="password2nd.errors?.['required'] && password2nd.touched">
+        password is required
+      </div>
+      <div class="form-text text-danger" *ngIf="password2nd.errors?.['required'] && (password2nd.touched || password2nd.dirty)">
+        confirm password is invalid
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="age">Age</label>
+      <input type="age" formControlName="age" placeholder="enter age"/>
+      <div class="form-text text-danger" *ngIf="age.errors?.['required'] && age.touched">
+        age is required
+      </div>
+      <div class="form-text text-danger" *ngIf="age.errors?.['min'] && (age.touched || age.dirty)">
+        maximum allowed age between 18 and 130 years old
+      </div>
+      <div class="form-text text-danger" *ngIf="age.errors?.['max'] && (age.touched || age.dirty)">
+        maximum allowed age between 18 and 130 years old
+      </div>
+    </div>
+
+    <div class="input-container">
+      <button  (click)="onSubmit()" routerLink="/login">Update Profile</button>
+    </div>
+    
+  </form>
+</div>
+<router-outlet></router-outlet>

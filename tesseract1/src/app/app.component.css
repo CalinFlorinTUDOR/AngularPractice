@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+/* Customize navbar */
+
+.navbar {
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  background: transparent;
+  box-shadow: 0 2px 29px #19c0d6;
+  display: flex;
+  align-items: center;
+  transition: padding 1s;
+
+}
+
+.navbar ul {
+
+  font-family: 'Ubuntu Condensed';
+  font-size: 20px;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  margin: 10px 77rem;
+  gap: 60px;
+  color: #19c0d6;
+  justify-content: space-between;
+  
+}
+
+.navbar li {
+  width: 100px;
+}
+
+.logo {
+
+  width: 100px;
+  height: 100px;
+
+}
+

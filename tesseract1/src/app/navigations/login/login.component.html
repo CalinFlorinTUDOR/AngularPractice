@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="header">
+      <h2>Welcome to Tesseract log in page</h2>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username" placeholder="enter your username ">
+      <div class="form-text text-danger" *ngIf="username.errors?.['required'] && (username.touched || username.dirty)">
+        username is required
+      </div>
+      <div class="form-text text-danger" *ngIf="username.errors?.['minlength'] && (username.touched || username.dirty)">
+        username is too short. At least 2 characters
+      </div>
+  </div>
+
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" placeholder="enter your password" id="password">
+    <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
+      password is required
+    </div>
+    <div class="form-text text-danger" *ngIf="password.errors?.['minlength'] && (password.touched || password.dirty)">
+      password is too short. At least 6 characters long
+    </div>
+  </div>
+
+  <div class="form-control">
+    <button class="btn" id="button" type="submit" routerLink="/home">Log In</button>
+  </div>
+  </form>
+</div>
+
