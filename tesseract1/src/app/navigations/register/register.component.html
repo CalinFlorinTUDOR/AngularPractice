@@ -73,7 +73,7 @@
 
     </div>
 
-    <div class="input-container">
+    < class="input-container">
       <label for="age">Age</label>
       <input type="age" formControlName="age" placeholder="enter age"/>
       <div class="form-text text-danger" *ngIf="age.errors?.['required'] && age.touched">
@@ -82,10 +82,6 @@
       <div class="form-text text-danger" *ngIf="age.errors?.['min'] && (age.touched || age.dirty)">
         maximum allowed age between 18 and 130 years old
       </div>
-      <div class="form-text text-danger" *ngIf="age.errors?.['max'] && (age.touched || age.dirty)">
-        maximum allowed age between 18 and 130 years old
-      </div>
-    </div>
 
     <div class="input-container">
       <button  (click)="onSubmit()" routerLink="/login">Registration</button>
