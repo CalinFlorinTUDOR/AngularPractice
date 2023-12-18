@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
   get username(): FormControl {
     return this.setForm.get('username') as FormControl;
-  }  
+  }
 
   get email(): FormControl {
     return this.setForm.get('email') as FormControl;

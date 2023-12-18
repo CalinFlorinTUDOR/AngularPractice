@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap");
 
 /* Customize the register form */
 
 .container {
-  font-family: 'Ubuntu Condensed';
+  font-family: "Ubuntu Condensed";
   position: absolute;
   background-color: transparent;
   color: #19c0d6;
@@ -24,16 +24,13 @@
 }
 
 .header h2 {
-
-  font-family: 'Ubuntu Condensed';
+  font-family: "Ubuntu Condensed";
   font-size: 24px;
   display: flex;
   justify-content: center;
-  
 }
 
 .register {
-  
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
@@ -41,39 +38,32 @@
 }
 
 .input-container {
-
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
 }
 
 .input-container label {
-
   cursor: pointer;
   display: inline-block;
   margin-bottom: 10px;
-  
 }
 
 .input-container input {
-  
   border: 2px solid #f0f0f0;
   border-radius: 5px;
   display: block;
   font-family: inherit;
   font-size: 14px;
-  padding: 10px;;
+  padding: 10px;
   width: 100%;
 }
 
 .text-danger {
-
   color: red;
-  
 }
 
 .register button {
-
   background-color: rgba(14, 28, 151, 0.6);
   border: 2px solid rgba(14, 28, 151, 0.6);
   border-radius: 5px;
@@ -84,5 +74,4 @@
   padding: 10px;
   width: 100%;
   margin-top: 26px;
-
 }

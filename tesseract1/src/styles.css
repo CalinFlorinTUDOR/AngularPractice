@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background-color: rgb(82, 76, 66);
+  background-color: #0f0f10;
 }
 
 html,
@@ -10,5 +10,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: Ubuntu, sans-serif;
+  font-family: Ubuntu Condensed, sans-serif;
 }

@@ -23,7 +23,9 @@
 
 <form [formGroup]="shiftForm">
 <div formArrayName="shifts">
-    <div *ngFor="let shift of shifts.controls; let i = index" [formGroupName]="i"></div>
+    
+    
+    <div *ngFor="let shift of shifts.controls; let i = index" [formGroupName]="i">
     <div class="shiftsContainer">
         <mat-form-field>
             <input matInput placeholder="Date"  formControlName="date">
@@ -52,8 +54,8 @@
         <mat-form-field>
             <input matInput placeholder="Earnings" formControlName="earnings">
         </mat-form-field>
-        <button mat-raised-button color="warm">Delete</button>
-
+        <button mat-raised-button color="warm" (click)="deleteShift(i)">Delete</button>
+</div>
 
     </div>
 

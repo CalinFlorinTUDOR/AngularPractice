@@ -12,31 +12,30 @@ export class ShiftsComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { 
 
-    this.shiftForm = this.fb.group({
-      shifts: this.fb.array([])
-
-    });
+   
   }
 
   get shifts() {
+    console.log(this.shiftForm.controls)
+
     return this.shiftForm.get('shifts') as FormArray;
   }
   addShift() {
     const shift = this.fb.group({
     
 
-      date: ['', Validators.required],
-      start_time: ['', Validators.required],
-      end_time: ['', Validators.required],
-      hourly_wage: ['', Validators.required],
-      shift_place: ['', Validators.required],
-      shift_name: ['', Validators.required],
-      earnings: ['', Validators.required]
-    
+      date: '',
+      start_time: '',
+      end_time: '',
+      hourly_wage: '',
+      shift_place: '',
+      shift_name: '',
+      earnings: '',
+      
 
     })
     this.shifts.push(shift)
-    // console.log(this.shifts)
+    
   }
   
   deleteShift(i: number) {
@@ -44,6 +43,10 @@ export class ShiftsComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.shiftForm=this.fb.group({
+      shifts:this.fb.array([])
+    })
   }
 }
 
